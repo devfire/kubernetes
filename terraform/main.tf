@@ -51,11 +51,40 @@ resource "aws_instance" "kubemasters" {
   ami = "${data.aws_ami.amazon_linux.id}"
   vpc_security_group_ids = ["${var.security_group_id}"]
   subnet_id = "${element(data.aws_subnet_ids.private.ids,count.index)}"
-  key_name = "pf-us-east"
+  key_name = "igor.kantor"
   count = 3
   instance_type = "t2.micro"
   tags {
     Name = "kubemaster"
+    Owner = "Platform"
+    Role = "kubernetes"
   }
 }
 
+resource "aws_instance" "kubenodes" {
+  ami = "${data.aws_ami.amazon_linux.id}"
+  vpc_security_group_ids = ["${var.security_group_id}"]
+  subnet_id = "${element(data.aws_subnet_ids.private.ids,count.index)}"
+  key_name = "igor.kantor"
+  count = 3
+  instance_type = "t2.micro"
+  tags {
+    Name = "kubenode"
+    Owner = "Platform"
+    Role = "kubernetes"
+  }
+}
+
+resource "aws_instance" "etcds" {
+  ami = "${data.aws_ami.amazon_linux.id}"
+  vpc_security_group_ids = ["${var.security_group_id}"]
+  subnet_id = "${element(data.aws_subnet_ids.private.ids,count.index)}"
+  key_name = "igor.kantor"
+  count = 3
+  instance_type = "t2.micro"
+  tags {
+    Name = "etcd"
+    Owner = "Platform"
+    Role = "kubernetes"
+  }
+}
