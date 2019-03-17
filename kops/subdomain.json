@@ -1,0 +1,27 @@
+{
+  "Comment": "Create a subdomain NS record in the parent domain",
+  "Changes": [
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "kube.devfire.io",
+        "Type": "NS",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "ns-1288.awsdns-33.org"
+          },
+          {
+            "Value": "ns-624.awsdns-14.net"
+          },
+          {
+            "Value": "ns-61.awsdns-07.com"
+          },
+          {
+            "Value": "ns-1928.awsdns-49.co.uk"
+          }
+        ]
+      }
+    }
+  ]
+}
