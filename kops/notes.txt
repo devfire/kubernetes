@@ -1,0 +1,8 @@
+ ✘ ⚙ ig@carbon  ~/Documents/kubernetes/kops   master  kops edit ig nodes            
+Using cluster from kubectl context: dev.kube.devfire.io
+
+ ⚙ ig@carbon  ~/Documents/kubernetes/kops   master  kops edit ig master-us-east-1a
+Using cluster from kubectl context: dev.kube.devfire.io
+
+ ⚙ ig@carbon  ~/Documents/kubernetes/kops   master  kops update cluster dev.kube.devfire.io --yes
+
