@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-kubernetes-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: hello1.coontie.com
+    http:
+      paths:
+      - backend:
+          serviceName: hello-kubernetes-first
+          servicePort: 80
+  - host: hello2.coontie.com
+    http:
+      paths:
+      - backend:
+          serviceName: hello-kubernetes-second
+          servicePort: 80
+
