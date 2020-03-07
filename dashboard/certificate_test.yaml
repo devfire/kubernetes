@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: test-certificate
+spec:
+  secretName: test-certificate-secret
+  dnsNames: 
+  - test.coontie.com
+  issuerRef:
+    name: selfsigned-issuer
+    kind: Issuer

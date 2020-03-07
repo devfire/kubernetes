@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: kubernetes-dashboard-stg
+  namespace: kube-system
+spec:
+  secretName: certificate-stg-dashboard
+  dnsNames:
+  - kubedash.coontie.com
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - kubedash.coontie.com
+  issuerRef:
+    name: letsencrypt-stg
+    # We can reference ClusterIssuers by changing the kind here.
+    # The default value is Issuer (i.e. a locally namespaced Issuer)
+    kind: ClusterIssuer

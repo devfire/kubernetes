@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: kubernetes-dashboard-ingress-certificate
+  namespace: kubernetes-dashboard
+spec:
+  secretName: kubernetes-dashboard-ingress-certificate-secret
+  dnsNames: 
+  - kubedash.coontie.com
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer

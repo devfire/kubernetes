@@ -1,0 +1,10 @@
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: kuard-certificate
+spec:
+  commonName: kuard.coontie.com
+  secretName: kuard-cert-tls
+  issuerRef:
+    name: selfsigned-issuer
