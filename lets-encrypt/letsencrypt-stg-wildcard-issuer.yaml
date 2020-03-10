@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Issuer
+metadata:
+  name: letsencrypt-wildcard-issuer
+spec:
+  acme:
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: igor@devfire.io
+    privateKeySecretRef:
+      name: letsencrypt-wildcard-issuer
+    solvers:
+    - selector:
+        dnsZones:
+          - "coontie.com"
+      dns01:
+        route53:
+          region: us-east-1
+          accessKeyID: AKIA3AGE7FDIO2M24YFO
+          secretAccessKeySecretRef:
+            name: aws-route53-creds
+            key: password.txt
