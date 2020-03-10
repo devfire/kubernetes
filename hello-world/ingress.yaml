@@ -9,6 +9,9 @@ spec:
   - hosts:
     - hello1.coontie.com
     secretName: certificate-prod-wildcard
+  - hosts:
+    - hello1.coontie.com
+    secretName: certificate-prod-wildcard    
   rules:
   - host: hello1.coontie.com
     http:
