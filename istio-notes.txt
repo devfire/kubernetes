@@ -1,0 +1,3 @@
+#get all namespaces marked for istio injection
+kubectl get namespace -L istio-injection
+kubectl label namespace kubernetes-dashboard istio-injection=enabled
